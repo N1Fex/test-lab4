@@ -1,0 +1,91 @@
+.header {
+    display: grid;
+    width: 100%;
+    grid-template-rows: 1fr;
+	grid-gap: 15px;
+	grid-template-columns: repeat(4, 1fr) 1.5fr;
+	grid-template-areas:
+			"python c java js prolog";
+	margin-bottom
+}
+
+.topic {
+	padding: 10px;
+	background: white;
+}
+
+
+.header > .prolog, .content > .prolog {
+	grid-area: prolog;
+	background: pink;
+}
+
+.header > .python, .content > .python {
+	grid-area: python;
+}
+
+.header > .c, .content > .c {
+	grid-area: c;
+}
+
+.header > .java, .content > .java {
+	grid-area: java;
+}
+
+.header > .js, .content > .js {
+	grid-area: js;
+}
+
+.header > div {
+	padding: 2%;
+	background: grey;
+	text-align: center;
+}
+
+
+.content {
+	display: grid;
+	justify-content: space-evenly;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-areas:
+			"python c java"
+			"js prolog prolog";
+	grid-gap: 15px;
+	background: lime;
+	padding: 10px;
+}
+
+@media (max-width: 800px) {
+	.header {
+		display: grid;
+		width: 100%;
+		margin-bottom: 10px;
+		grid-template-rows: repeat(2, 1fr);
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas:
+			"prolog prolog prolog prolog"
+			"python c java js"
+	}
+	
+	.content {
+		display: grid;
+		justify-content: center;
+		grid-template-rows: repeat(3, 1fr);
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas:
+				"python c"
+				"java js"
+				"prolog prolog";
+		grid-gap: 15px;
+		background: lime;
+		padding: 10px;
+	}
+	
+	.content > .prolog {
+		margin: 0 auto;	
+		width: 50%;
+	}
+	
+
+}
